@@ -1,0 +1,19 @@
+{
+  "page_title": "新增文章 - 你的部落格",
+  "layout": {
+    "header": {
+      "component": "navigation",
+      "data_source": "../navigation.json",
+      "description": "頁面頂部的導覽列，數據來源於根目錄下的共用導覽設定檔。"
+    },
+    "main_content": {
+      "component": "article_editor_section",
+      "description": "頁面主要內容區，包含文章編輯器和相關表單欄位。"
+    },
+    "footer": {
+      "component": "footer",
+      "data_source": "../footer.json",
+      "description": "頁面最下方的頁腳，數據來源於根目錄下的共用頁腳設定檔。"
+    }
+  }
+}

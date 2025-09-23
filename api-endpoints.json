@@ -1,0 +1,4 @@
+{
+  "post_url": "https://api.yourblog.com/submit",
+  "description": "所有表單提交的目標 API 網址，用於處理文章發布、聯繫表單等資料傳送。"
+}

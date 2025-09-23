@@ -1,0 +1,29 @@
+{
+    "page_title": "關於我 - 你的部落格",
+    "layout": {
+        "header": {
+            "component": "navigation",
+            "data_source": "navigation.json",
+            "description": "頁面頂部的導覽列，數據來源於共用的導覽設定檔。"
+        },
+        "main_content": {
+            "component": "two_column_layout",
+            "description": "頁面主要內容區，採用左右雙欄佈局。",
+            "left_column": {
+                "component": "author_info_block",
+                "data_source": "author.json",
+                "description": "左側欄位，顯示作者的個人資訊，數據來源於共用的作者設定檔。此處會展示頭像與簡介。"
+            },
+            "right_column": {
+                "component": "author_bio_block",
+                "data_source": "author.json",
+                "description": "右側欄位，專門用於顯示作者的自介和社群連結，數據同樣來源於作者設定檔。"
+            }
+        },
+        "footer": {
+            "component": "footer",
+            "data_source": "footer.json",
+            "description": "頁面最下方的頁腳，數據來源於共用的頁腳設定檔。"
+        }
+    }
+}

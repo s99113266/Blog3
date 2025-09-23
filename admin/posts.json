@@ -1,0 +1,34 @@
+{
+  "page_title": "文章管理 - 你的部落格",
+  "layout": {
+    "header": {
+      "component": "navigation",
+      "data_source": "../navigation.json",
+      "description": "頁面頂部的導覽列，數據來源於根目錄下的共用導覽設定檔。"
+    },
+    "main_content": {
+      "component": "two_column_layout",
+      "description": "頁面主要內容區，採用左右雙欄佈局。",
+      "left_column": {
+        "component": "author_info_block",
+        "data_source": "../author.json",
+        "description": "左側欄位，顯示作者的個人資訊和部落格摘要，數據來源於根目錄下的共用作者設定檔。"
+      },
+      "right_column": {
+        "component": "articles_management_section",
+        "description": "右側欄位，用於顯示從API獲取的文章列表，並提供管理功能。",
+        "features": [
+          "delete_button",
+          "pagination"
+        ],
+        "pagination_component": "pagination_block",
+        "description_pagination": "文章列表下方的分頁區塊。"
+      }
+    },
+    "footer": {
+      "component": "footer",
+      "data_source": "../footer.json",
+      "description": "頁面最下方的頁腳，數據來源於根目錄下的共用頁腳設定檔。"
+    }
+  }
+}
