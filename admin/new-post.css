@@ -1,0 +1,269 @@
+/* 設計標記 (Design Tokens) */
+:root {
+    /* 色彩 */
+    --color-surface-100: #FFFFFF;
+    --color-surface-200: #F8F8F8;
+    --color-border: #EBEBEB;
+    --color-text-primary: #424242;
+    --color-text-secondary: #9E9E9E;
+    --color-text-link: #424242;
+    --color-interactive: #212121;
+    --color-on-interactive: #FFFFFF;
+    --color-quote: #616161;
+    --color-code-bg: #FAFAFA;
+    
+    /* 間距 */
+    --spacing-xxs: 4px;
+    --spacing-xs: 8px;
+    --spacing-sm: 12px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+    --spacing-2xl: 48px;
+    --spacing-3xl: 64px;
+    --spacing-4xl: 80px;
+    
+    /* 字體 */
+    --font-family-sans: "Helvetica Neue", Arial, sans-serif;
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-bold: 700;
+    --line-height-base: 1.6;
+    --font-size-base: 16px;
+    --font-size-h1: 38px;
+    --font-size-h2: 28px;
+    --font-size-h3: 22px;
+    --font-size-h4: 18px;
+    --font-size-meta: 14px;
+    --font-size-code: 15px;
+    
+    /* 圓角 */
+    --border-radius-base: 4px;
+    --border-radius-circle: 50%;
+}
+
+/* 基礎樣式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family-sans);
+    font-size: var(--font-size-base);
+    color: var(--color-text-primary);
+    line-height: var(--line-height-base);
+    background-color: var(--color-surface-100);
+}
+
+/* 導覽列樣式 */
+.navigation {
+    background-color: var(--color-surface-100);
+    border-bottom: 1px solid var(--color-border);
+    padding: var(--spacing-md) 0;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: var(--spacing-xl);
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--color-text-primary);
+    font-weight: var(--font-weight-medium);
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: var(--color-interactive);
+}
+
+/* 主要內容區 */
+.main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--spacing-3xl) var(--spacing-lg);
+}
+
+.article-editor-section {
+    background-color: var(--color-surface-100);
+    border-radius: var(--border-radius-base);
+    padding: var(--spacing-2xl);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+    font-size: var(--font-size-h2);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--spacing-xl);
+    color: var(--color-text-primary);
+}
+
+/* 表單樣式 */
+.form-group {
+    margin-bottom: var(--spacing-lg);
+}
+
+.form-label {
+    display: block;
+    margin-bottom: var(--spacing-sm);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-primary);
+}
+
+.form-input,
+.form-textarea {
+    width: 100%;
+    padding: var(--spacing-md);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-base);
+    font-family: var(--font-family-sans);
+    font-size: var(--font-size-base);
+    transition: border-color 0.2s ease;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color: var(--color-interactive);
+}
+
+.form-textarea {
+    min-height: 300px;
+    resize: vertical;
+}
+
+/* TinyMCE 編輯器容器 */
+.tinymce-container {
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-base);
+    overflow: hidden;
+}
+
+.tinymce-container .mce-tinymce {
+    border: none !important;
+}
+
+/* 按鈕樣式 */
+.btn {
+    padding: var(--spacing-md) var(--spacing-lg);
+    border: none;
+    border-radius: var(--border-radius-base);
+    font-family: var(--font-family-sans);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-medium);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-primary {
+    background-color: var(--color-interactive);
+    color: var(--color-on-interactive);
+}
+
+.btn-primary:hover {
+    background-color: #000000;
+}
+
+.btn-secondary {
+    background-color: var(--color-surface-200);
+    color: var(--color-text-primary);
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-border);
+}
+
+.form-actions {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-xl);
+}
+
+/* 頁腳樣式 */
+.footer {
+    background-color: var(--color-surface-100);
+    border-top: 1px solid var(--color-border);
+    padding: var(--spacing-lg) 0;
+    margin-top: var(--spacing-4xl);
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+    text-align: center;
+}
+
+.footer-text {
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-meta);
+}
+
+/* 加載指示器 */
+.loading {
+    display: none;
+    text-align: center;
+    padding: var(--spacing-xl);
+}
+
+.loading.active {
+    display: block;
+}
+
+/* 錯誤訊息 */
+.error-message {
+    background-color: #FFE5E5;
+    color: #D32F2F;
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius-base);
+    margin-bottom: var(--spacing-md);
+    display: none;
+}
+
+.error-message.active {
+    display: block;
+}
+
+/* 成功訊息 */
+.success-message {
+    background-color: #E8F5E8;
+    color: #2E7D32;
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius-base);
+    margin-bottom: var(--spacing-md);
+    display: none;
+}
+
+.success-message.active {
+    display: block;
+}
+
+/* 回應式設計 */
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+
+    .main-content {
+        padding: var(--spacing-xl) var(--spacing-md);
+    }
+
+    .article-editor-section {
+        padding: var(--spacing-lg);
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+}

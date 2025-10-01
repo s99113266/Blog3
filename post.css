@@ -1,0 +1,348 @@
+/* 設計標記 (Design Tokens) */
+:root {
+  /* 色彩 */
+  --color-surface-100: #FFFFFF;
+  --color-surface-200: #F8F8F8;
+  --color-border: #EBEBEB;
+  --color-text-primary: #424242;
+  --color-text-secondary: #9E9E9E;
+  --color-text-link: #424242;
+  --color-interactive: #212121;
+  --color-on-interactive: #FFFFFF;
+  --color-quote: #616161;
+  --color-code-bg: #FAFAFA;
+
+  /* 間距 */
+  --spacing-xxs: 4px;
+  --spacing-xs: 8px;
+  --spacing-sm: 12px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 48px;
+  --spacing-3xl: 64px;
+  --spacing-4xl: 80px;
+
+  /* 字體 */
+  --font-family-sans: "Helvetica Neue", Arial, sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  --line-height-base: 1.6;
+  --font-size-base: 16px;
+  --font-size-h1: 38px;
+  --font-size-h2: 28px;
+  --font-size-h3: 22px;
+  --font-size-h4: 18px;
+  --font-size-meta: 14px;
+  --font-size-code: 15px;
+
+  /* 圓角 */
+  --border-radius-base: 4px;
+  --border-radius-circle: 50%;
+}
+
+/* 基礎樣式 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  color: var(--color-text-primary);
+  background-color: var(--color-surface-100);
+}
+
+/* 導覽列樣式 */
+.navigation {
+  background-color: var(--color-surface-100);
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--spacing-md) 0;
+}
+
+.navigation ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-xl);
+}
+
+.navigation a {
+  text-decoration: none;
+  color: var(--color-text-link);
+  font-weight: var(--font-weight-medium);
+  transition: color 0.2s ease;
+}
+
+.navigation a:hover {
+  color: var(--color-interactive);
+}
+
+/* 主要內容區樣式 */
+.main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--spacing-2xl) var(--spacing-lg);
+  display: flex;
+  gap: var(--spacing-2xl);
+}
+
+/* 雙欄佈局 */
+.two-column-layout {
+  display: flex;
+  gap: var(--spacing-2xl);
+  width: 100%;
+}
+
+/* 左側欄位 */
+.left-column {
+  flex: 0 0 300px;
+}
+
+/* 右側欄位 */
+.right-column {
+  flex: 1;
+}
+
+/* 作者資訊區塊 */
+.author-info-block {
+  background-color: var(--color-surface-100);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-base);
+  padding: var(--spacing-xl);
+  margin-bottom: var(--spacing-2xl);
+}
+
+.author-avatar {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: var(--border-radius-base);
+  margin-bottom: var(--spacing-lg);
+}
+
+.author-nickname {
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--spacing-md);
+  color: var(--color-text-primary);
+}
+
+.author-bio {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-base);
+  margin-bottom: var(--spacing-lg);
+}
+
+.author-social-links {
+  display: flex;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-lg);
+}
+
+.author-social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: var(--color-surface-200);
+  border-radius: var(--border-radius-circle);
+  color: var(--color-text-primary);
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.author-social-links a:hover {
+  background-color: var(--color-interactive);
+  color: var(--color-on-interactive);
+}
+
+/* 文章內容區塊 */
+.article-content-section {
+  background-color: var(--color-surface-100);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-base);
+  padding: var(--spacing-2xl);
+}
+
+/* 頁面標題 */
+.page-title {
+  font-size: var(--font-size-h1);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--spacing-xl);
+  color: var(--color-text-primary);
+}
+
+/* 文章標題 */
+.article-title {
+  font-size: var(--font-size-h1);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--spacing-xl);
+  color: var(--color-text-primary);
+}
+
+/* 文章內文 */
+.article-text {
+  font-size: var(--font-size-base);
+  color: var(--color-text-primary);
+  line-height: var(--line-height-base);
+  margin-bottom: var(--spacing-lg);
+}
+
+/* 文章發布日期 */
+.article-date {
+  font-size: var(--font-size-meta);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-2xl);
+}
+
+/* 章節標題 */
+h2 {
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-bold);
+  margin-top: var(--spacing-3xl);
+  margin-bottom: var(--spacing-md);
+  color: var(--color-text-primary);
+}
+
+/* 小節標題 */
+h3 {
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-bold);
+  margin-top: var(--spacing-2xl);
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-text-primary);
+}
+
+/* 內文段落 */
+p {
+  font-size: var(--font-size-base);
+  color: var(--color-text-primary);
+  line-height: var(--line-height-base);
+  margin-bottom: var(--spacing-lg);
+}
+
+/* 引言區塊 */
+blockquote {
+  padding-left: var(--spacing-md);
+  border-left: 4px solid var(--color-border);
+  color: var(--color-quote);
+  font-style: italic;
+  margin-bottom: var(--spacing-lg);
+}
+
+/* 程式碼區塊 */
+pre {
+  padding: var(--spacing-lg);
+  background-color: var(--color-code-bg);
+  color: var(--color-text-primary);
+  font-family: 'Courier New', monospace;
+  border-radius: var(--border-radius-base);
+  font-size: var(--font-size-code);
+  margin-top: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+  overflow-x: auto;
+}
+
+/* 行內程式碼 */
+code {
+  padding: var(--spacing-xxs);
+  background-color: var(--color-code-bg);
+  color: var(--color-text-primary);
+  border-radius: var(--border-radius-base);
+  font-size: var(--font-size-code);
+}
+
+/* 無序列表 */
+ul {
+  margin-bottom: var(--spacing-md);
+}
+
+/* 有序列表 */
+ol {
+  margin-bottom: var(--spacing-md);
+}
+
+/* 列表項目 */
+li {
+  margin-bottom: var(--spacing-xxs);
+}
+
+/* 圖片 */
+img {
+  width: 100%;
+  display: block;
+  margin-top: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+  border-radius: var(--border-radius-base);
+}
+
+/* 頁腳樣式 */
+.footer {
+  background-color: var(--color-surface-100);
+  border-top: 1px solid var(--color-border);
+  padding: var(--spacing-xl) 0;
+  text-align: center;
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-meta);
+}
+
+/* 加載中狀態 */
+.loading {
+  text-align: center;
+  padding: var(--spacing-4xl);
+  color: var(--color-text-secondary);
+}
+
+.loading::after {
+  content: "...";
+  animation: dots 1.5s steps(4, end) infinite;
+}
+
+@keyframes dots {
+  0%, 20% {
+    content: "";
+  }
+  40% {
+    content: ".";
+  }
+  60% {
+    content: "..";
+  }
+  80%, 100% {
+    content: "...";
+  }
+}
+
+/* 錯誤狀態 */
+.error {
+  color: #d32f2f;
+  text-align: center;
+  padding: var(--spacing-4xl);
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+  .main-content {
+    padding: var(--spacing-lg);
+  }
+  
+  .two-column-layout {
+    flex-direction: column;
+  }
+  
+  .left-column {
+    flex: 1;
+    margin-bottom: var(--spacing-2xl);
+  }
+  
+  .right-column {
+    flex: 1;
+  }
+}

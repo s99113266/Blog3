@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新增文章 - 你的部落格</title>
+    <link rel="stylesheet" href="new-post.css">
+</head>
+<body>
+    <!-- 導覽列 -->
+    <nav class="navigation" id="navigation">
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="/">文章列表</a></li>
+                <li><a href="/about.html">關於我</a></li>
+                <li><a href="/admin/posts.html">文章管理</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 主要內容區 -->
+    <main class="main-content">
+        <section class="article-editor-section">
+            <h1 class="section-title">新增文章</h1>
+            
+            <!-- 錯誤訊息 -->
+            <div class="error-message" id="errorMessage"></div>
+            
+            <!-- 成功訊息 -->
+            <div class="success-message" id="successMessage"></div>
+            
+            <!-- 加載指示器 -->
+            <div class="loading" id="loading">
+                <p>處理中...</p>
+            </div>
+
+            <!-- 文章編輯表單 -->
+            <form id="articleForm">
+                <!-- 隱藏欄位 -->
+                <input type="hidden" id="actiontype" name="actiontype" value="新增">
+                <input type="hidden" id="id" name="id" value="">
+                
+                <!-- 文章標題 -->
+                <div class="form-group">
+                    <label for="title" class="form-label">文章標題</label>
+                    <input type="text" id="title" name="title" class="form-input" required>
+                </div>
+                
+                <!-- 文章內容 -->
+                <div class="form-group">
+                    <label for="text" class="form-label">文章內容</label>
+                    <div class="tinymce-container">
+                        <textarea id="text" name="text" class="form-textarea"></textarea>
+                    </div>
+                </div>
+                
+                <!-- 管理員密碼 -->
+                <div class="form-group">
+                    <label for="pwd" class="form-label">管理員密碼</label>
+                    <input type="password" id="pwd" name="pwd" class="form-input" required>
+                </div>
+                
+                <!-- 表單操作按鈕 -->
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">發布文章</button>
+                    <button type="button" class="btn btn-secondary" id="cancelBtn">取消</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <!-- 頁腳 -->
+    <footer class="footer" id="footer">
+        <div class="footer-container">
+            <p class="footer-text" id="footerText">© 2025 部落格名稱. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- TinyMCE 編輯器 -->
+    <script src="https://cdn.tiny.cloud/1/5xhu87jrih636d4ok046n6mu76o7roitljb9v5zdwcxqm2re/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+    <script src="new-post.js"></script>
+</body>
+</html>

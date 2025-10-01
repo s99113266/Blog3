@@ -1,0 +1,16 @@
+{
+  "links": [
+    {
+      "name": "文章列表",
+      "url": "/"
+    },
+    {
+      "name": "關於我",
+      "url": "/about.html"
+    },
+    {
+      "name": "文章管理",
+      "url": "/admin/posts.html"
+    }
+  ]
+}
